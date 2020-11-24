@@ -1,0 +1,20 @@
+{
+  "name": "flip-card-backend",
+  "version": "1.0.0",
+  "description": "flip card backend",
+  "repository": "https://github.com/superbeom/flip-card-backend",
+  "author": "superbeom <it.super.beom@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/core": "^7.12.8",
+    "@babel/node": "^7.12.6",
+    "@babel/preset-env": "^7.12.7",
+    "graphql-yoga": "^1.18.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  },
+  "scripts": {
+    "dev": "nodemon --exec babel-node src/server.js"
+  }
+}

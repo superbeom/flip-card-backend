@@ -3,5 +3,7 @@ type User {
   username: String! @unique
   secret: String!
   stage: Int! @default(value: 1)
+  horizontalNum: Int! @default(value: 2)
   heart: Int! @default(value: 5)
+  gameEnd: Boolean! @default(value: false)
 }

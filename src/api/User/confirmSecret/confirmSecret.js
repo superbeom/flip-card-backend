@@ -7,15 +7,9 @@ export default {
       const { username, secret } = args;
       const user = await prisma.user({ username });
 
-      console.log("user: ", user);
-
       if (user.secret === secret) {
         // JWT
-        const test = generateToken(user.id);
-        console.log("token: ", test);
-        return test;
-
-        // return generateToken(user.id);
+        return generateToken(user.id);
       } else {
         throw Error("Wrong username and secret combination");
       }

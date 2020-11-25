@@ -7,6 +7,6 @@ export default {
       const { user } = request;
 
       return prisma.user({ id: user.id });
-    }
-  }
+    },
+  },
 };

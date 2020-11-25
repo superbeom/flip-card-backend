@@ -1,0 +1,7 @@
+type User {
+  id: ID!
+  username: String!
+  secret: String!
+  stage: Int!
+  heart: Int!
+}

@@ -1,0 +1,11 @@
+type Mutation {
+  editUser(
+    avatar: String
+    username: String
+    giveHelpLanguages: [String]
+    giveHelpPlaces: [String]
+    takeHelpLanguages: [String]
+    takeHelpPlaces: [String]
+    bio: String
+  ): User!
+}

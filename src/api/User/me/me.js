@@ -1,12 +1,20 @@
 import { prisma } from "../../../../generated/prisma-client";
 
 export default {
-  Query: {
-    me: (_, __, { request, isAuthenticated }) => {
-      isAuthenticated(request);
-      const { user } = request;
+  Mutation: {
+    me: async (_, args) => {
+      const { username } = args;
 
-      return prisma.user({ id: user.id });
+      await prisma.updateUser({
+        where: {
+          username,
+        },
+        data: {
+          username,
+        },
+      });
+
+      return prisma.user({ username });
     },
   },
 };

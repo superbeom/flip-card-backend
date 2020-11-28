@@ -5,8 +5,6 @@ export default {
     updateGameInfo: async (_, args) => {
       const { username, stage, horizontalNum, heart, gameEnd } = args;
 
-      console.log("Backend - username: ", username);
-
       await prisma.updateUser({
         where: {
           username,

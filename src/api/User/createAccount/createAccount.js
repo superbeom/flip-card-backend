@@ -21,7 +21,7 @@ export default {
 
           return true;
         } catch (error) {
-          console.log(error);
+          console.log("Error @if_createAccount");
 
           return false;
         }

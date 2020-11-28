@@ -1,0 +1,9 @@
+type Mutation {
+  updateGameInfo(
+    username: String!
+    stage: Int
+    horizontalNum: Int
+    heart: Int
+    gameEnd: Boolean
+  ): Boolean!
+}

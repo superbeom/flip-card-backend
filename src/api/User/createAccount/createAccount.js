@@ -1,10 +1,13 @@
 import { prisma } from "../../../../generated/prisma-client";
+import bcrypt from "bcrypt";
+
 import checkUsername from "../../../apiUtils/checkUsername";
 
 export default {
   Mutation: {
     createAccount: async (_, args) => {
       const { username, secret } = args;
+      const salt = bcrypt.genSaltSync(10);
 
       const existUsername = await prisma.$exists.user({ username });
 
@@ -14,14 +17,17 @@ export default {
 
       if (checkUsername(username)) {
         try {
+          /* Password Encryption */
+          const hash = bcrypt.hashSync(secret, salt);
+
           await prisma.createUser({
             username,
-            secret,
+            secret: hash,
           });
 
           return true;
         } catch (error) {
-          console.log("Error @if_createAccount");
+          console.log("Error @if_createAccount: ", error.message);
 
           return false;
         }

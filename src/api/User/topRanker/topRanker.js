@@ -1,7 +1,7 @@
 import { prisma } from "../../../../generated/prisma-client";
 
 export default {
-  Query: {
+  Mutation: {
     topRanker: async () => {
       const users = await prisma.users({
         orderBy: "stage_DESC",

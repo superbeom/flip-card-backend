@@ -1,7 +1,7 @@
 import { prisma } from "../../../../generated/prisma-client";
 
 export default {
-  Query: {
+  Mutation: {
     checkRank: async (_, args) => {
       const { username } = args;
 

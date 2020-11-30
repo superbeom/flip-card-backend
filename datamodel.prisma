@@ -4,6 +4,6 @@ type User {
   secret: String!
   stage: Int! @default(value: 1)
   horizontalNum: Int! @default(value: 2)
-  heart: Int! @default(value: 5)
+  heart: Int! @default(value: 10)
   gameEnd: Boolean! @default(value: false)
 }

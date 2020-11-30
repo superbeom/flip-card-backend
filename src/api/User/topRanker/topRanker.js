@@ -5,7 +5,7 @@ export default {
     topRanker: async () => {
       const users = await prisma.users({
         orderBy: "stage_DESC",
-        first: 15,
+        first: 12,
       });
 
       return users;

@@ -11,6 +11,10 @@ export default {
       const user = await prisma.user({ username });
 
       try {
+        if (!user) {
+          throw Error("This username does not exist");
+        }
+
         /* Password Decryption */
         const correct = bcrypt.compareSync(secret, user.secret);
 
@@ -23,7 +27,13 @@ export default {
       } catch (error) {
         console.log("Error @compareSecret_confirmSecret: ", error);
 
-        return "Wrong";
+        if (error.message.includes("exist")) {
+          return "Does't Exist";
+        } else if (error.message.includes("combination")) {
+          return "Wrong";
+        } else {
+          return "Wrong";
+        }
       }
     },
   },

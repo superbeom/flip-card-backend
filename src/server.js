@@ -1,4 +1,7 @@
 require("dotenv").config();
+require("@babel/core").transform("code", {
+  plugins: ["@babel/plugin-transform-runtime"],
+});
 import { GraphQLServer } from "graphql-yoga";
 import logger from "morgan";
 import schema from "./schema";

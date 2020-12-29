@@ -1,4 +1,4 @@
-endpoint: ${env:PRISMA_ENDPOINT}
+endpoint: "https://flip-card-server-18adb6264c.herokuapp.com/flip-card/prod"
 datamodel: datamodel.prisma
 
 generate:

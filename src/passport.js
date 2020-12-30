@@ -5,7 +5,7 @@ import { Strategy, ExtractJwt } from "passport-jwt";
 
 const jwtOptions = {
   jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
-  secretOrKey: process.env.JWT_SECRET
+  secretOrKey: `D49NoC(|b,qBdqc6.!bGY'9h2eI_Zxi=QT+O7-%>2k~(5hB"om|sFvsnB5d4IN>+c*DLDNL2DLdl_--2_1$%@3421#$`,
 };
 
 const verifyUser = async (payload, done) => {

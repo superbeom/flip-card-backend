@@ -20,6 +20,8 @@ export default {
           /* Password Encryption */
           const hash = bcrypt.hashSync(secret, salt);
 
+          console.log("test 1");
+
           await prisma.createUser({
             username,
             secret: hash,
@@ -27,6 +29,7 @@ export default {
 
           return true;
         } catch (error) {
+          console.log("test 2");
           console.log("Error @if_createAccount: ", error.message);
 
           return false;

@@ -1,4 +1,4 @@
-endpoint: "https://flip-card-test-cfa0d5f82a.herokuapp.com/filp-card-test/stag"
+endpoint: "https://card-backend-test-4368448a7c.herokuapp.com/heungdo-lab/card-backend-test/prod"
 datamodel: datamodel.prisma
 
 generate:

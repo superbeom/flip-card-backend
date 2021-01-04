@@ -35,7 +35,7 @@
     "generate": "prisma generate",
     "prisma": "npm run deploy && npm run generate",
     "dev": "nodemon --exec babel-node src/server.js",
-    "prebuild": "npm run deploy",
+    "prebuild": "npm run generate",
     "build": "babel src -d build",
     "postbuild": "cd src && copy ./api/**/*.graphql ../build/api/",
     "start": "node build/server.js"

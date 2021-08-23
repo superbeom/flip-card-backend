@@ -10,7 +10,6 @@ generator client {
 model User {
   id            String   @id
   username      String   @unique
-  password      String
   stage         Int      @default(1)
   horizontalNum Int      @default(2)
   heart         Int      @default(5)

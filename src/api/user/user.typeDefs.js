@@ -10,4 +10,10 @@ export default gql`
     heart: Int!
     gameEnd: Boolean!
   }
+
+  type CheckRankResult {
+    success: String!
+    message: String!
+    rank: Int
+  }
 `;

@@ -1,4 +1,8 @@
 import prisma from "../../../prisma";
+import {
+  CHECK_RANK_SUCCESS_MESSAGE,
+  CHECK_RANK_FAIL_MESSAGE,
+} from "../../../strings";
 
 export default {
   Query: {
@@ -18,7 +22,7 @@ export default {
 
         return {
           success: true,
-          message: "Check your rank!",
+          message: CHECK_RANK_SUCCESS_MESSAGE,
           rank,
         };
       } catch (error) {
@@ -26,7 +30,7 @@ export default {
 
         return {
           success: false,
-          message: "Fails to check your rank.\nPlease try it again later.",
+          message: CHECK_RANK_FAIL_MESSAGE,
         };
       }
     },

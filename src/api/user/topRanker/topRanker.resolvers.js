@@ -1,16 +1,33 @@
 import prisma from "../../../prisma";
+import {
+  TOP_RANKER_SUCCESS_MESSAGE,
+  TOP_RANKER_FAIL_MESSAGE,
+} from "../../../strings";
 
 export default {
-  Mutation: {
+  Query: {
     topRanker: async () => {
-      return "TEST";
+      try {
+        const topRankers = await prisma.user.findMany({
+          take: 12,
+          orderBy: {
+            stage: "desc",
+          },
+        });
 
-      // const users = await prisma.users({
-      //   orderBy: "stage_DESC",
-      //   first: 12,
-      // });
+        return {
+          success: true,
+          message: TOP_RANKER_SUCCESS_MESSAGE,
+          topRankers,
+        };
+      } catch (error) {
+        console.log("Error @user_topRanker: ", error.message);
 
-      // return users;
+        return {
+          success: false,
+          message: TOP_RANKER_FAIL_MESSAGE,
+        };
+      }
     },
   },
 };

@@ -16,4 +16,10 @@ export default gql`
     message: String!
     rank: Int
   }
+
+  type TopRankerResult {
+    success: String!
+    message: String!
+    topRankers: [User]
+  }
 `;

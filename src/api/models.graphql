@@ -1,9 +1,0 @@
-type User {
-  id: ID!
-  username: String!
-  secret: String!
-  stage: Int!
-  horizontalNum: Int!
-  heart: Int!
-  gameEnd: Boolean!
-}

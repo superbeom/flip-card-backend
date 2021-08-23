@@ -1,0 +1,20 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id            String   @id
+  username      String   @unique
+  password      String
+  stage         Int      @default(1)
+  horizontalNum Int      @default(2)
+  heart         Int      @default(5)
+  gameEnd       Boolean  @default(false)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}

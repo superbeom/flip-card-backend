@@ -1,3 +1,0 @@
-type Mutation {
-  me(username: String!): User!
-}

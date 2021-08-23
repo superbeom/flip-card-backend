@@ -1,3 +1,0 @@
-type Mutation {
-  checkRank(username: String!): Int!
-}

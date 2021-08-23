@@ -7,7 +7,7 @@ export default gql`
     rank: Int
   }
 
-  type Mutation {
+  type Query {
     checkRank: CheckRankResult!
   }
 `;

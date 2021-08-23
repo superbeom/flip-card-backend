@@ -4,18 +4,23 @@ import { protectedResolver } from "../../shared/shared.utils";
 
 const checkRankResolver = async (_, __, { loggedInUser }) => {
   try {
-    // const users = await prisma.users({
-    //   orderBy: "stage_DESC",
-    // });
+    const users = await prisma.user.findMany({
+      select: {
+        username: true,
+        stage: true,
+      },
+      orderBy: {
+        stage: "asc",
+      },
+    });
 
-    // const rank =
-    //   users.findIndex((item) => item.username === loggedInUser.username) + 1;
+    const rank =
+      users.findIndex((user) => user.username === loggedInUser.username) + 1;
 
     return {
       success: true,
       message: "Check your rank!",
-      // rank,
-      rank: 10,
+      rank,
     };
   } catch (error) {
     console.log("Error @user_checkRank: ", error.message);
@@ -28,7 +33,7 @@ const checkRankResolver = async (_, __, { loggedInUser }) => {
 };
 
 export default {
-  Mutation: {
+  Query: {
     checkRank: protectedResolver(checkRankResolver),
   },
 };
